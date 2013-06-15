@@ -1,0 +1,28 @@
+
+
+<div class="container">
+
+      <h2>Thread Forummi</h2>
+
+      <table class="table table-striped">
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @home.each do |thread_forum| %>
+  <tr>
+    <td><%= thread_forum.user_id %></td>
+    <td><%= thread_forum.title %></td>
+    <td><%= thread_forum.body %></td>
+    <td><%= link_to 'Show', thread_forum %></td>
+    <td><%= link_to 'Destroy', thread_forum, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New Thread forum', new_thread_forum_path,:class=>'btn',:role=>'button'%>
+    </div>

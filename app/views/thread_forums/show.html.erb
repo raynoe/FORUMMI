@@ -1,0 +1,42 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @thread_forum.user_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @thread_forum.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @thread_forum.body %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @thread_forum.status %>
+</p>
+
+<p>
+  <b>Is deleted:</b>
+  <%= @thread_forum.is_deleted %>
+</p>
+
+<p>
+  <b>Reputation point:</b>
+  <%= @thread_forum.reputation_point %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @thread_forum.category_id %>
+</p>
+</table>
+
+<%= link_to 'Edit', edit_thread_forum_path(@thread_forum) %> |
+<%= link_to 'Back', thread_forums_path %>
+</div>
