@@ -1,0 +1,11 @@
+Project name: Forummi
+Team:
+  Project manager
+    - Devi
+    - Alam
+
+  Development Team
+    - Ray
+    - Firman
+    - Yaya
+    - Anis
