@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <!-- <div class="field">
+  <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div> -->
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -23,18 +23,18 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
-  <!-- <div class="field">
+  <div class="field">
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.hidden_field  :status %>
   </div>
   <div class="field">
     <%= f.label :is_deleted %><br />
-    <%= f.text_field :is_deleted %>
+    <%= f.hidden_field :is_deleted %>
   </div>
   <div class="field">
     <%= f.label :reputation_point %><br />
-    <%= f.number_field :reputation_point %>
-  </div> -->
+    <%= f.hidden_field :reputation_point %>
+  </div>
   <div class="field">
     <%= f.label :category_id %><br />
     <%= f.number_field :category_id %>
