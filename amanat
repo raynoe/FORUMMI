@@ -1,0 +1,7 @@
+ray untuk tread itu,,saat kita isi tread harus minta login dlu kalo blm login.
+
+trus si user id itu jangan ditampilin, user_id  di hidden aja.. yang isiannya id si user yang login
+trus is_deleted, status dan reputation_point jangan di tampilin jua
+
+is_deleted isiannya defaultnya 0, trus status dafaultnya "", dan reputation point detafultnya 0.
+sep2

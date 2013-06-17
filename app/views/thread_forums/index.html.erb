@@ -1,15 +1,14 @@
 <div class="container">
-<h1>Listing thread_forums</h1>
+<h1>Thread forums</h1>
 
 <table class="table table-striped">
   <tr>
-    <th>User</th>
     <th>Title</th>
     <th>Body</th>
-    <th>Status</th>
+    <!-- <th>Status</th>
     <th>Is deleted</th>
     <th>Reputation point</th>
-    <th>Category</th>
+    <th>Category</th> -->
     <th></th>
     <th></th>
     <th></th>
@@ -17,13 +16,13 @@
 
 <% @thread_forums.each do |thread_forum| %>
   <tr>
-    <td><%= thread_forum.user_id %></td>
+    <!-- <td><%= thread_forum.user_id %></td> -->
     <td><%= thread_forum.title %></td>
     <td><%= thread_forum.body %></td>
     <td><%= thread_forum.status %></td>
-    <td><%= thread_forum.is_deleted %></td>
+    <!-- <td><%= thread_forum.is_deleted %></td>
     <td><%= thread_forum.reputation_point %></td>
-    <td><%= thread_forum.category_id %></td>
+    <td><%= thread_forum.category_id %></td> -->
     <td><%= link_to 'Show', thread_forum %></td>
     <td><%= link_to 'Edit', edit_thread_forum_path(thread_forum) %></td>
     <td><%= link_to 'Destroy', thread_forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>

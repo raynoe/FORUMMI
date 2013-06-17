@@ -36,10 +36,17 @@
                 </ul>
               </li>
             </ul>
+            <% if user_signed_in? -%>
+            <form class="navbar-form pull-right">
+              <%= link_to 'My info', edit_user_registration_path, :class=>'btn' %>
+              <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>'btn' %>
+            </form>
+            <% else %>
             <form class="navbar-form pull-right">
               <%= link_to 'Sign in', new_user_session_path, :class=>'btn' %>
               <%= link_to 'Register', new_user_registration_path, :class=>'btn' %>
             </form>
+            <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
