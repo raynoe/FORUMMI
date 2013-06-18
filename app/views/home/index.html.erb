@@ -1,24 +1,10 @@
 <div class="container">
+  <h2>Thread Forummi</h2>
 
-      <h2>Thread Forummi</h2>
-
-      <table class="table table-striped">
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @home.each do |thread_forum| %>
-  <tr>
-    <td><%= thread_forum.title %></td>
-    <td><%= thread_forum.body %></td>
-  </tr>
-<% end %>
-</table>
-<% if user_signed_in? %>
-<%= link_to 'New Thread forum', new_thread_forum_path,:class=>'btn',:role=>'button'%>
+  <%= render :partial => 'shared/threads_table', :locals => {:thread_forums => @thread_forums} %>
+  
+  <%= link_to 'New Thread forum', new_thread_forum_path,:class=>'btn',:role=>'button'%>
+  <% if user_signed_in? %>
+    <%= link_to 'New Thread forum', new_thread_forum_path,:class=>'btn',:role=>'button'%>
     </div>
-<% end %>
+  <% end %>
