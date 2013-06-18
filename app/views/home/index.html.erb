@@ -1,10 +1,7 @@
 <div class="container">
-  <h2>Thread Forummi</h2>
+  <h2>Thread</h2>
 
   <%= render :partial => 'shared/threads_table', :locals => {:thread_forums => @thread_forums} %>
   
-  <%= link_to 'New Thread forum', new_thread_forum_path,:class=>'btn',:role=>'button'%>
-  <% if user_signed_in? %>
-    <%= link_to 'New Thread forum', new_thread_forum_path,:class=>'btn',:role=>'button'%>
+  <%= link_to 'New Thread', new_thread_forum_path,:class=>'btn btn-primary',:role=>'button'%>
     </div>
-  <% end %>

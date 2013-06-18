@@ -1,10 +1,10 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
+<!-- <p>
   <b>User:</b>
   <%= @thread_forum.user_id %>
-</p>
+</p> -->
 
 <p>
   <b>Title:</b>
@@ -16,7 +16,7 @@
   <%= @thread_forum.body %>
 </p>
 
-<p>
+<!-- <p>
   <b>Status:</b>
   <%= @thread_forum.status %>
 </p>
@@ -34,9 +34,9 @@
 <p>
   <b>Category:</b>
   <%= @thread_forum.category_id %>
-</p>
+</p> -->
 </table>
 
-<%= link_to 'Edit', edit_thread_forum_path(@thread_forum) %> |
-<%= link_to 'Back', thread_forums_path %>
+<%= link_to 'Edit', edit_thread_forum_path(@thread_forum), :class=>'btn' %> |
+<%= link_to 'Back', thread_forums_path, :class=>'btn' %>
 </div>
