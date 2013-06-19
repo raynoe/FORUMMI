@@ -5,5 +5,7 @@ class ThreadForum < ActiveRecord::Base
   belongs_to :user
 
   validates :title, :body, :presence => true
+  
+  has_reputation :votes, source: :user, aggregated_by: :sum
 end
 
