@@ -2,7 +2,7 @@ class ThreadForumsController < ApplicationController
   # GET /thread_forums
   # GET /thread_forums.json
   def index
-    @thread_forums = ThreadForum.all
+     @thread_forums = ThreadForum.find_with_reputation(:votes, :all, order: "votes desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +80,12 @@ class ThreadForumsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @thread_forum = ThreadForum.find(params[:id])
+    @thread_forum.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
+  end
+
 end

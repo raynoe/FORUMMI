@@ -2,6 +2,7 @@
   <tr>
     <th>Title</th>
     <th>Body</th>
+    <th>Vote</th>
     <!-- <th>Status</th>
     <th>Is deleted</th>
     <th>Reputation point</th>
@@ -16,6 +17,11 @@
     <!-- <td><%= thread_forum.user_id %></td> -->
     <td><%= link_to thread_forum.title, thread_forum %></td>
     <td><%= thread_forum.body %></td>
+    <td>
+        <div class="vote">
+            <%= pluralize thread_forum.reputation_for(:votes).to_i, "" %>
+        </div>
+    </td>
     <!-- <td><%= thread_forum.status %></td>
     <td><%= thread_forum.is_deleted %></td>
     <td><%= thread_forum.reputation_point %></td>
