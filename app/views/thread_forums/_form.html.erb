@@ -20,6 +20,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div> 
+  <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body, :rows=>'10' %>
   </div>
@@ -35,10 +39,7 @@
     <%= f.label :reputation_point %><br />
     <%= f.hidden_field :reputation_point %>
   </div> -->
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
-  </div> 
+  
   <div class="actions">
     <%= f.submit %>
   </div>
