@@ -34,11 +34,11 @@
   <div class="field">
     <%= f.label :reputation_point %><br />
     <%= f.hidden_field :reputation_point %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
-  </div> -->
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div> 
   <div class="actions">
     <%= f.submit %>
   </div>

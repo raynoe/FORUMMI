@@ -26,6 +26,8 @@
   | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
 <% end %>
 </p>
+
+
 <!-- <p>
   <b>Status:</b>
   <%= @thread_forum.status %>
@@ -47,6 +49,7 @@
 </p> -->
 </table>
 
+<br />
 <%= link_to 'Edit', edit_thread_forum_path(@thread_forum), :class=>'btn' %> |
 <%= link_to '< Back', thread_forums_path, :class=>'btn' %>
 </div>
