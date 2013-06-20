@@ -44,10 +44,12 @@
               <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>'btn' %>
             </form>
             <% else %>
-            <form class="navbar-form pull-right">
-              <%= link_to 'Sign in', new_user_session_path, :class=>'btn' %>
-              <%= link_to 'Register', new_user_registration_path, :class=>'btn' %>
-            </form>
+            <div class="top_right">
+            Login 
+            <%= image_tag("twt1.png", :title =>'Login Twitter') %> 
+            <%= image_tag("fb1.png", :title =>'Login Facebook') %> 
+            <%= image_tag("gg1.png", :title =>'Login Google Chrome') %> &nbsp <%= image_tag("setting.png", :title =>'Konfigurasi') %>
+            </div>
             <% end %>
           </div><!--/.nav-collapse -->
         </div>

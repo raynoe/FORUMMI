@@ -2216,3 +2216,9 @@
     overflow: visible !important;
   }
 }
+
+.top_right{
+   float: right; padding: 20px;
+   padding-right: 0px;
+   color:#fff;
+}
