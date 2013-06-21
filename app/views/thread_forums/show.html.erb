@@ -20,15 +20,35 @@
 <p>
   <b>Body:</b>
   <%= @thread_forum.body %>
+
+</p>
+
+ <p class="vote">
+| <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
+<% if current_user && !current_user.voted_for?(@thread_forum) %>
+  | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
+  | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
+
+
+ 
+<br />
+ <% end %>
+<h2>Comments</h2>
+<%= render @thread_forum.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
 </p>
 <p class="vote">
 | <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
 <% if current_user && !current_user.voted_for?(@thread_forum) %>
   | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
   | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
-<% end %>
-</p>
 
+
+ 
+<br />
+ <% end %>
 
 <!-- <p>
   <b>Status:</b>
