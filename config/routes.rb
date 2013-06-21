@@ -4,7 +4,7 @@ Forummi::Application.routes.draw do
   match "profile" => "users#show"
   
 
-  devise_for :users, :only => [:new, :show] do
+  devise_for :users do
   	 resources :profiles
   end
   

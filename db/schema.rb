@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20130620181411) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
-=======
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -231,4 +230,4 @@ ActiveRecord::Schema.define(:version => 20130621050948) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
->>>>>>> ae02530c3f14bc5db2cf1aa1e56e47bfc691b0ac
+
