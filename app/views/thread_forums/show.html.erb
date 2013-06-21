@@ -5,7 +5,9 @@
   <b>User:</b>
   <%= @thread_forum.user_id %>
 </p> -->
-
+<p>
+  <%= image_tag(@thread_forum.picture_url, :width => 600) if @thread_forum.picture.present? %>
+</p>
 <p>
   <b>Created By:</b>
   <%= @thread_forum.user.email %>

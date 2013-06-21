@@ -1,8 +1,14 @@
 Forummi::Application.routes.draw do
+ 
   resources :categories
+  match "profile" => "users#show"
+  
 
+  devise_for :users, :only => [:new, :show] do
+  	 resources :profiles
+  end
+  
 
-  devise_for :users
 
   root :to => 'home#index'
 

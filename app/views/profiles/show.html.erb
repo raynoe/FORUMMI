@@ -1,0 +1,32 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag profile.image_url.to_s %>
+  <%= image_tag(@profile.picture_url, :width => 600) if @profile.picture.present? %>
+</p>
+<p>
+  <b>Nim</b>
+  <%= @profile.nim %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @profile.first_name %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @profile.bio_name %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+</div>
