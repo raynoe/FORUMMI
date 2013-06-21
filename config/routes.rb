@@ -8,7 +8,7 @@ Forummi::Application.routes.draw do
 
   resources :thread_forums do
     member { post :vote }
-    
+    resources :comments
   end
 
 

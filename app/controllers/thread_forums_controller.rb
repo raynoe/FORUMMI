@@ -14,6 +14,8 @@ class ThreadForumsController < ApplicationController
   # GET /thread_forums/1.json
   def show
     @thread_forum = ThreadForum.find(params[:id])
+    @comment = @thread_forum.comments.build
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +26,7 @@ class ThreadForumsController < ApplicationController
   # GET /thread_forums/new
   # GET /thread_forums/new.json
   def new
-    @thread_forum = ThreadForum.new
+    @thread_forum = ThreadForum.new (params[:thread_forum])
 
     respond_to do |format|
       format.html # new.html.erb

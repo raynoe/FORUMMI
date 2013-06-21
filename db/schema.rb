@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620142540) do
+ActiveRecord::Schema.define(:version => 20130621050948) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.string   "status"
+    t.boolean  "is_deleted"
+    t.integer  "reputation_point"
+    t.integer  "category_id"
+    t.integer  "thread_forum_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "comments", ["thread_forum_id"], :name => "index_comments_on_thread_forum_id"
 
   create_table "profiles", :force => true do |t|
     t.string   "nim"
