@@ -5,7 +5,9 @@
   <b>User:</b>
   <%= @thread_forum.user_id %>
 </p> -->
-
+<p>
+  <%= image_tag(@thread_forum.picture_url, :width => 600) if @thread_forum.picture.present? %>
+</p>
 <p>
   <b>Created By:</b>
   <%= @thread_forum.user.email %>
@@ -18,7 +20,35 @@
 <p>
   <b>Body:</b>
   <%= @thread_forum.body %>
+
 </p>
+
+ <p class="vote">
+| <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
+<% if current_user && !current_user.voted_for?(@thread_forum) %>
+  | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
+  | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
+
+
+ 
+<br />
+ <% end %>
+<h2>Comments</h2>
+<%= render @thread_forum.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+</p>
+<p class="vote">
+| <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
+<% if current_user && !current_user.voted_for?(@thread_forum) %>
+  | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
+  | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
+
+
+ 
+<br />
+ <% end %>
 
 <!-- <p>
   <b>Status:</b>
@@ -41,6 +71,7 @@
 </p> -->
 </table>
 
+<br />
 <%= link_to 'Edit', edit_thread_forum_path(@thread_forum), :class=>'btn' %> |
-<%= link_to 'Back', thread_forums_path, :class=>'btn' %>
+<%= link_to '< Back', thread_forums_path, :class=>'btn' %>
 </div>

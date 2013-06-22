@@ -9,3 +9,50 @@ Team:
     - Firman
     - Yaya
     - Anis
+
+
+--------------------------------- MAIN FEATURE --------------------------------
+
+I. Forum
+  I.I     Thread (RAY & ANIS - 4 jam, deadline SELASA jam 5 sore, minggu scaffold 5 menit - 1 jam.. html 2-3 jam)
+            - create thread
+            - edit thread
+            - view thread (pake breadcrumb)
+  I.II    Thread Comment (FIRMAN, deadline RABU jam 5 sore, selasa review)
+            - create comment
+            - edit comment
+  I.III   Vote / Downvote (YAYA SEBASTIAN, deadline RABU jam 5 sore, selasa review) )
+            - Thread 
+            - Comment
+  I.IV    Category (Perkuliahan, UKM, Event, Others.. etc) (YAYA SEBASTIAN 4 jam, deadline JUM'AT jam 5 sore)
+            - view thread by category
+
+II. User
+  II.I Authentication (RAY, deadline RABU jam 5 sore))
+    - Login
+    - Register
+    - Forgot password
+  II.II Profile (RAY, deadline JUM'AT jam 5 sore))
+    - change prodile picture
+    - description (first name, username, email, etc)
+
+III. Admin ()
+  I.I   Manage Thread (RAY, FIRMAN, YAYA & ANIS)
+          - Delete thread (soft delete) thread.is_deleted == false ~> Thread not found
+          - Suspend Thread (thread.status == "suspended") ~> Thread is suspended
+          - Create Category
+  I.II  Manage User
+          - Suspend user
+
+
+--------------------------------- DATABASE ---------------------------------
+
+USER          : email, username, birthday, *avatar_paperclip*
+PROFILE       : first_name, last_name, bio, user_id
+THREAD_FORUM  : user_id, title, body, status, is_deleted, reputation_point, category_id
+COMMENT       : user_id, forum_thread_id, body, reputation_point, is_deleted, status
+CATEGORY      : name
+REPUTATION    : user_id, thread_id, comment_id, point (1,-1)
+
+
+*timestamp udah pasti ada di tiap table: (created_at, updated-at)

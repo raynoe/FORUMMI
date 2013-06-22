@@ -19,11 +19,19 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'pg'
 end
 
+
 group :development do
   gem 'sqlite3'
 end
+
+# To use debugger
+# gem 'debugger'
+gem 'activerecord-reputation-system', require: 'reputation_system'
+
