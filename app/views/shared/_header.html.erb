@@ -32,7 +32,7 @@
         <% if user_signed_in? -%>
         <form class="navbar-form pull-right">
           <div class="current_user_avatar">
-            <%= image_tag(current_user.profile.picture.thumb)%>
+            <%= image_tag(current_user.profile.picture.thumb) if current_user.profile.present? %>
           </div>
           <%= link_to 'My info', edit_user_registration_path, :class=>'btn' %>
           <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>'btn' %>
