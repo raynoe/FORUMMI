@@ -1,3 +1,16 @@
 // Place all the styles related to the Thread_forums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.thread{
+  .thread-details{
+    &.thread-owner{width: 500px}
+    &.thread-title{width: 500px}
+  }
+  .thread-content{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: 20px;
+    padding: 20px 0;
+
+  }
+}

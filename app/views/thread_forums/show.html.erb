@@ -1,75 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="thread">
+  <%#= image_tag(@thread_forum.picture_url, :width => 600) if @thread_forum.picture.present? %>
+  <div class="thread-details thread-owner pull-left">
+    <span class="thread-details-label">Created By:</span>
+    <span class="thread-details-info"><%= @thread_forum.user.email %></span>
+  </div>
+  
+  <div class="thread-action-edit pull-right">
+    <%= link_to 'Edit', edit_thread_forum_path(@thread_forum), :class=>'btn' %>
+  </div>
 
-<!-- <p>
-  <b>User:</b>
-  <%= @thread_forum.user_id %>
-</p> -->
-<p>
-  <%= image_tag(@thread_forum.picture_url, :width => 600) if @thread_forum.picture.present? %>
-</p>
-<p>
-  <b>Created By:</b>
-  <%= @thread_forum.user.email %>
-</p>
-<p>
-  <b>Title:</b>
-  <%= @thread_forum.title %>
-</p>
+  <div class="clearfix"></div>
 
-<p>
-  <b>Body:</b>
-  <%= @thread_forum.body %>
+  <div class="thread-details thread-title pull-left">
+    <span class="thread-details-label">Title:</span>
+    <span class="thread-details-info"><%= @thread_forum.title %></span>
+  </div>
 
-</p>
+  <div class="thread-action-vote pull-right">
+    <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
+    <% if current_user && !current_user.voted_for?(@thread_forum) %>
+      | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
+      | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
+      <br />
+    <% end %>
+  </div>
 
- <p class="vote">
-| <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
-<% if current_user && !current_user.voted_for?(@thread_forum) %>
-  | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
-  | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
-
-
- 
-<br />
- <% end %>
-<h2>Comments</h2>
-<%= render partial: "comments/comment", locals: {comments: @thread_forum.comments} %>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
-</p>
-<p class="vote">
-| <%= pluralize @thread_forum.reputation_for(:votes).to_i, "vote" %>
-<% if current_user && !current_user.voted_for?(@thread_forum) %>
-  | <%= link_to "up", vote_thread_forum_path(@thread_forum, type: "up"), method: "post" %>
-  | <%= link_to "down", vote_thread_forum_path(@thread_forum, type: "down"), method: "post" %>
+  <div class="clearfix"></div>
 
 
- 
-<br />
- <% end %>
+  <div class="thread-content">
+    <%= @thread_forum.body %>
+  </div>  
+</div>
 
-<!-- <p>
-  <b>Status:</b>
-  <%= @thread_forum.status %>
-</p>
 
-<p>
-  <b>Is deleted:</b>
-  <%= @thread_forum.is_deleted %>
-</p>
+<%= render partial: "comments", locals: {comments: @thread_forum.comments} %>
 
-<p>
-  <b>Reputation point:</b>
-  <%= @thread_forum.reputation_point %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @thread_forum.category_id %>
-</p> -->
-</table>
-
-<br />
-<%= link_to 'Edit', edit_thread_forum_path(@thread_forum), :class=>'btn' %> |
-<%= link_to '< Back', thread_forums_path, :class=>'btn' %>

@@ -1,0 +1,21 @@
+<div class="header-label">Comments</div>
+
+<%- comments.each do |comment| %>
+  <%- if comment.persisted? %>
+    <div class="comment">
+      <%#- debugger -%>
+      <div class="comment-body"><%= comment.body %></div>
+      <div class="comment-action remove"><%= link_to '&times;'.html_safe, [comment.thread_forum, comment], confirm: 'Are you sure?', method: :delete, title: "Remove this comment" %></div>
+      <div class="comment-poster"><%= "by #{comment.user.username} at #{comment.created_at.strftime("%d %m %Y")}" %></div>
+    </div>
+  <% end %>
+<% end %>
+
+<%- if comments.blank? %>
+  <div class="comment">
+    <div class="comment-body text-center"> - no comment yet -</div>
+  </div>
+<% end %>
+<div class="header-label">Add a comment</div>
+<%= render "comments/form" %>
+

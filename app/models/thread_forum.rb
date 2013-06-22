@@ -6,8 +6,9 @@ class ThreadForum < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   belongs_to :user
   has_one :categories
-  validates :title, :body, :presence => true
-  
+
+  validates :title, :presence => true
+  validates :body, :presence => true, :length => { :minimum => 100}
   has_reputation :votes, source: :user, aggregated_by: :sum
 end
 

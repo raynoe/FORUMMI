@@ -1133,9 +1133,6 @@ background: #ffffff;
 border: 1px #d5d9dd solid;
 border-bottom: 1px #d9dce1 solid;
 padding: 10px 15px; width:300px;
--webkit-box-shadow: 10px 10px 13px -12px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 13px -12px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 13px -12px rgba(0,0,0,0.75);
 }
 
 textarea:focus,
@@ -3879,9 +3876,9 @@ input[type="submit"].btn.btn-mini {
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
   -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-		  width:960px; margin: auto;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+	width:920px; margin: auto;
 }
 
 .alert,
