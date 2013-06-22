@@ -1,4 +1,4 @@
-<div class="container" id="page">
+
 <div class="login">
 	Gabung sekarang!<br><br>
 	<%= image_tag("twt.png") %> <%= image_tag("fb.png") %> <%= image_tag("gg.png") %> 
@@ -9,7 +9,7 @@
   <%= f.email_field :email, :autofocus => true ,:placeholder => "Email" %></div>
 
   <div>
-  <%= f.password_field :password ,:placeholder => "Email"%></div>
+  <%= f.password_field :password ,:placeholder => "Password"%></div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
@@ -23,6 +23,4 @@
 
 <div class="welcome">
 	 <%= image_tag("welcome.png", :align =>"center") %>
-</div>
-
 </div>

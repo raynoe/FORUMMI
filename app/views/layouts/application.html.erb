@@ -1,63 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Forummi</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#"><%= image_tag("logo.png", :alt => "rss feed", :width => "40px") %> FORUMMI COMMUNITY</a>
-          <div class="nav-collapse collapse">
-            <% if user_signed_in? -%>
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">Category</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <% end %>
-            <% if user_signed_in? -%>
-            <form class="navbar-form pull-right">
-              <%= link_to 'My info', edit_user_registration_path, :class=>'btn' %>
-              <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>'btn' %>
-            </form>
-            <% else %>
-            <div class="top_right">
-            Login 
-            <%= image_tag("twt1.png", :title =>'Login Twitter') %> 
-            <%= image_tag("fb1.png", :title =>'Login Facebook') %> 
-            <%= image_tag("gg1.png", :title =>'Login Google Chrome') %> &nbsp <%= image_tag("setting.png", :title =>'Konfigurasi') %>
-            </div>
-            <% end %>
-          </div><!--/.nav-collapse -->
-        </div>
+  <head>
+    <title>Forummi</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="container">
+      <%= render partial: "shared/alert_notification" %>
+      <%= render partial: "shared/header" %>
+
+      <div id="wrapper">
+        <%= yield %>
+        <br clear="all"/>
       </div>
     </div>
-<%= yield %>
-<div class="footer">
- With Ruby on Rails . ForUMMI 2013
-</div>
-</body>
+
+    <div class="footer">
+      With Ruby on Rails . ForUMMI 2013
+    </div>
+    
+  </body>
 </html>
