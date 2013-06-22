@@ -19,9 +19,8 @@ pre {
 
 a {
   color: #000;
-  &:visited {
-    color: #666;
-  }
+  &:visited {color: #666;}
+  &:visited.btn{color: #FFF}
 
 }
 
