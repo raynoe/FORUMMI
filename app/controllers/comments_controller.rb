@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_filter :authenticate_user!
   def create
     @thread_forum = ThreadForum.find(params[:thread_forum_id])
     @comment = @thread_forum.comments.new(params[:comment])
