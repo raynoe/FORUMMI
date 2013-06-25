@@ -1,6 +1,5 @@
 class ThreadForumsController < ApplicationController
-  # GET /thread_forums
-  # GET /thread_forums.json
+  before_filter :authenticate_user!
   def index
      @thread_forums = ThreadForum.find_with_reputation(:votes, :all, order: "votes desc")
 
